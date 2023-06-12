@@ -1,5 +1,5 @@
 {% set name = "eden-kernel" %}
-{% set version = "0.3.1348" %}
+{% set version = "0.3.1350" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/eden-kernel-{{ version }}.tar.gz
-  sha256: d1346320e950c2d046820834b06754820cc7d2d0965dd53f1ed38143e66c251d
+  sha256: 621a2d0a0a8b5bc758f453d53d25dc7aac091e18cb623a097349dc84acde23dc
 
 build:
   number: 0
