@@ -7,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/eden-kernel-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/eden-kernel-{{ version }}.tar.gz
   sha256: d1346320e950c2d046820834b06754820cc7d2d0965dd53f1ed38143e66c251d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - dill
     - future
-    - python >=3.8
+    - python >={{ python_min }}
     - joblib
     - matplotlib-base
     - networkx >=2.0
@@ -40,6 +40,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/fabriziocosta/EDeN
